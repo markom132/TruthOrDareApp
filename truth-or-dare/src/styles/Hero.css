@@ -1,0 +1,47 @@
+/* Hero.css */
+.hero-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prekrivanje celog ekrana */
+    filter: blur(5px) brightness(0.5); /* Dodajemo blagi blur i tamniji efekat */
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: #fff;
+    z-index: 1; /* Da sadržaj bude iznad pozadine */
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Dodavanje zatamnjene pozadine iza teksta */
+    border-radius: 15px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  

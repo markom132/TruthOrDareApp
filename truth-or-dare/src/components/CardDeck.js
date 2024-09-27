@@ -9,7 +9,9 @@ const questions = [
 ];
 
 const challenges = [
-    'Udavi Bebiju guju'
+    'Pojedi kašiku senfa!',
+    'Pleši bez muzike 1 minut.',
+    'Igraj "plank" 30 sekundi.'
 ];
 
 const CardDeck = ({ choice }) => {

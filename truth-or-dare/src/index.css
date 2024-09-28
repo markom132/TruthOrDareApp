@@ -12,27 +12,38 @@ code {
     monospace;
 }
 
-body, html {
+body,
+html {
   font-family: 'Roboto', 'Montserrat', 'Lato', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(180deg, #1A1A1A, #000000);
+  color: #ffffff;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  animation: glow 2s ease-in-out infinite alternate; 
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   margin: 0;
 }
 
-p, span, a, li, button {
-  font-family: 'Roboto', sans-serif; 
+p,
+span,
+a,
+li,
+button {
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -49,9 +60,11 @@ p, span, a, li, button {
   0% {
     left: -100%;
   }
+
   50% {
     left: 100%;
   }
+
   100% {
     left: -100%;
   }
@@ -74,9 +87,11 @@ p, span, a, li, button {
   0% {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.2);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.4);
   }
+
   100% {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.2);
   }
@@ -86,20 +101,21 @@ p, span, a, li, button {
 .deck-container {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 15px;
   color: #ffffff;
-  animation: glow 2s ease-in-out infinite alternate; 
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 /* Prilagodite stilove za tekst i dugmad */
 .selection-title {
-  color: #00ffff; 
+  color: #00ffff;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
-.selection-btn, .back-button {
+.selection-btn,
+.back-button {
   background: rgba(0, 255, 255, 0.8);
   border: none;
   border-radius: 25px;
@@ -112,7 +128,8 @@ p, span, a, li, button {
   cursor: pointer;
 }
 
-.selection-btn:hover, .back-button:hover {
+.selection-btn:hover,
+.back-button:hover {
   background: #00ffff;
   color: #fff;
   box-shadow: 0 0 20px rgba(0, 255, 255, 1);

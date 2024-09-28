@@ -1,54 +1,58 @@
 .selection-container {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .selection-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .selection-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 30px; 
-  }
-  
-  .selection-btn {
-    padding: 20px 40px; 
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 30px; 
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease; 
-  }
-  
-  .selection-btn:hover {
-    transform: scale(1.1); 
-  }
-  
-  .truth-btn {
-    background-color: #61dafb;
-    color: #282c34;
-  }
-  
-  .truth-btn:hover {
-    background-color: #21a1f1;
-  }
-  
-  .dare-btn {
-    background-color: #ff6b6b;
-    color: #ffffff;
-  }
-  
-  .dare-btn:hover {
-    background-color: #ff4b4b;
-  }
-  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.selection-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.selection-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.selection-btn {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.selection-btn:hover {
+  transform: scale(1.1);
+}
+
+.truth-btn {
+  background-color: #00FFFF;
+  color: #1A1A1A;
+}
+
+.truth-btn:hover {
+  background-color: #00CCCC;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(212, 0, 255, 0.7), 0 4px 25px rgba(255, 0, 127, 0.7);
+
+}
+
+.dare-btn {
+  background: #D400FF;
+  color: #ffffff;
+}
+
+.dare-btn:hover {
+  background: #FF007F;
+  color: #1A1A1A;
+  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.7), 0 4px 25px rgba(255, 0, 127, 0.7);
+}

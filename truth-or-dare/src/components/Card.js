@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import '../styles/Card.css';
 
-const Card = ({ content }) => {
-  const [flipped, setFlipped] = useState(false); // State za praćenje okretanja kartice
-
-  const handleFlip = () => {
-    setFlipped(!flipped); // Menjamo stanje između okrenut/neokrenut
-  };
+const Card = ({ content, flipped, onFlipEnd }) => {
 
   return (
-    <div className={`card ${flipped ? 'flipped' : ''}`} onClick={handleFlip}>
+    <div className={`card ${flipped ? 'flipped' : ''}`} onTransitionEnd={onFlipEnd}>
       <div className="card-inner">
         <div className="card-front">
-          <h2>Klikni da vidiš</h2> {/* Prednja strana kartice */}
+          <h2>Klikni da vidiš</h2>
         </div>
         <div className="card-back">
-          <h2>{content}</h2> {/* Zadnja strana kartice */}
+          <h2>{content}</h2>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import image from '../styles/unnamed.png';
+import image from '../styles/background.png';
 import '../styles/Hero.css';
 import TruthOrDareSelection from './TruthOrDareSelection';
 import CardDeck from './CardDeck';

@@ -16,14 +16,28 @@ const challenges = [
 
 const CardDeck = ({ choice }) => {
     const [drawnCard, setDrawnCard] = useState(null);
-    const [flipped, setFlipped] = useState(false); 
+    const [flipped, setFlipped] = useState(false);
+    const [isFlipping, setIsFlipping] = useState(false);
 
     const drawCard = () => {
-        const cardArray = choice === 'truth' ? questions : challenges; 
-        const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
-        setDrawnCard(randomCard);
-        setFlipped(true);
+        if (!flipped) {
+            const cardArray = choice === 'truth' ? questions : challenges;
+            const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
+            setDrawnCard(randomCard);
+            setFlipped(true);
+        } else {
+            setFlipped(false);
+        }
     };
+
+    const handleFlipEnd = () => {
+        if(!flipped) {
+            const cardArray = choice === 'truth' ? questions : challenges;
+            const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
+            setDrawnCard(randomCard);
+        }
+        setIsFlipping(false);
+    }
 
     return (
         <div className="deck-container">
@@ -31,7 +45,7 @@ const CardDeck = ({ choice }) => {
                 {choice === 'truth' ? 'Izvuci kartu za pitanje!' : 'Izvuci kartu za izazov!'}
             </h1>
             <div className="deck" onClick={drawCard}>
-                <Card content={drawnCard} flipped={flipped} />
+                <Card content={drawnCard} flipped={flipped} onFlipEnd={handleFlipEnd} />
             </div>
         </div>
     );

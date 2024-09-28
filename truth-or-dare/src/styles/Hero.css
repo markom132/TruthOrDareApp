@@ -4,4 +4,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: glow 2s ease-in-out infinite alternate; 
 }

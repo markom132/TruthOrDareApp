@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/CardDeck.css';
+import sound from '../styles/card-sounds.mp3';
 import Card from './Card';
 
 const questions = [
@@ -21,7 +22,12 @@ const CardDeck = ({ choice }) => {
     const [isFlipping, setIsFlipping] = useState(false);
     const navigate = useNavigate();
 
+    const changeSound = useRef(null);
+
     const drawCard = () => {
+
+        changeSound.current.play();
+
         if (!flipped) {
             const cardArray = choice === 'truth' ? questions : challenges;
             const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
@@ -51,6 +57,7 @@ const CardDeck = ({ choice }) => {
             <h1 className="deck-title">
                 {choice === 'truth' ? 'Izvuci kartu za pitanje!' : 'Izvuci kartu za izazov!'}
             </h1>
+            <audio ref={changeSound} src={sound} preload='auto'></audio>
             <div className="deck" onClick={drawCard}>
                 <Card content={drawnCard} flipped={flipped} onFlipEnd={handleFlipEnd} />
             </div>

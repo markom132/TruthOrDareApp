@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/CardDeck.css';
 import Card from './Card';
 
@@ -18,6 +19,7 @@ const CardDeck = ({ choice }) => {
     const [drawnCard, setDrawnCard] = useState(null);
     const [flipped, setFlipped] = useState(false);
     const [isFlipping, setIsFlipping] = useState(false);
+    const navigate = useNavigate();
 
     const drawCard = () => {
         if (!flipped) {
@@ -39,6 +41,11 @@ const CardDeck = ({ choice }) => {
         setIsFlipping(false);
     }
 
+    const handleBack = () => {
+        setFlipped(false);
+        navigate('/');
+    }
+
     return (
         <div className="deck-container">
             <h1 className="deck-title">
@@ -46,6 +53,12 @@ const CardDeck = ({ choice }) => {
             </h1>
             <div className="deck" onClick={drawCard}>
                 <Card content={drawnCard} flipped={flipped} onFlipEnd={handleFlipEnd} />
+            </div>
+            <div>
+                <button className='back-button' onClick={handleBack}>
+                    <span className='back-icon'>🏠</span>
+                    Nazad
+                </button>
             </div>
         </div>
     );

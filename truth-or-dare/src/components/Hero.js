@@ -1,22 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import image from '../styles/background.png';
 import '../styles/Hero.css';
 import TruthOrDareSelection from './TruthOrDareSelection';
 import CardDeck from './CardDeck';
 
-const Hero = () => {
-    const [choice, setChoice] = useState('');
+const Hero = ({ setChoice }) => {
+    const navigate = useNavigate();
+    
+    const handleChoice = (selectedChoice) => {
+        setChoice(selectedChoice);
+        navigate('/deck');
+      };
     return (
         <section className="hero-container">
-            <div className="hero-background">
-                <img src={image} alt="Slika" />
-            </div>
-
-            {choice === '' ? (
-                <TruthOrDareSelection setChoice={setChoice} />
-            ) : (
-                <CardDeck choice={choice} />
-            )}
+            <TruthOrDareSelection setChoice={handleChoice} />
         </section>
     );
 };

@@ -65,7 +65,7 @@
 
 .card h2 {
     font-size: 1.3rem;
-    color: #282c34;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
 }
@@ -79,19 +79,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff6b6b;
+    background: #00FFFF;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #1A1A1A;
     font-size: 1.2rem;
     padding: 15px 30px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .back-button:hover {
-    background-color: #ff4b4b;
+    background: #D400FF;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(212, 0, 255, 0.7), 0 4px 25px rgba(255, 0, 127, 0.7);
 }
 
 .back-icon {

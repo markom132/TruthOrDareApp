@@ -12,6 +12,7 @@ const Hero = ({ setChoice }) => {
         setChoice(selectedChoice);
         navigate('/deck');
       };
+      
     return (
         <section className="hero-container">
             <TruthOrDareSelection setChoice={handleChoice} />

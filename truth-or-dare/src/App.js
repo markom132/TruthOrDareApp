@@ -10,6 +10,7 @@ function App() {
 
   return (
     <Router>
+      <div className="neon-line"></div>
       <Header />
       <Routes>
       <Route 

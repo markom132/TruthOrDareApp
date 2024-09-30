@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CardDeck from "./components/CardDeck";
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <Router>
+       <AnimatedBackground />
       <div className="neon-line"></div>
       <Header />
       <div className="horizontal-line one"></div>

@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import image from '../styles/background.png';
 import '../styles/Hero.css';
 import TruthOrDareSelection from './TruthOrDareSelection';
-import CardDeck from './CardDeck';
 
 const Hero = ({ setChoice }) => {
     const navigate = useNavigate();

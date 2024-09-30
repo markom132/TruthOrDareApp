@@ -76,6 +76,42 @@
     animation-direction: reverse;
 }
 
+.glowing-square {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(255, 0, 150, 0.6);
+    animation: pulse 3s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.glowing-square.one {
+    top: 30%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.glowing-square.two {
+    top: 60%;
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
 @keyframes move-lines {
     0% {
         transform: translateY(0);

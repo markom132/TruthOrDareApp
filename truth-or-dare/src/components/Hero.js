@@ -7,12 +7,12 @@ import CardDeck from './CardDeck';
 
 const Hero = ({ setChoice }) => {
     const navigate = useNavigate();
-    
+
     const handleChoice = (selectedChoice) => {
         setChoice(selectedChoice);
         navigate('/deck');
-      };
-      
+    };
+
     return (
         <section className="hero-container">
             <TruthOrDareSelection setChoice={handleChoice} />

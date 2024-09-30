@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -47,19 +47,26 @@
 }
 
 .truth-btn:hover {
-  background-color: #00CCCC;
+  background: linear-gradient(145deg, #00ffff, #009999);
   color: #ffffff;
-  box-shadow: 0 4px 20px rgba(212, 0, 255, 0.7), 0 4px 25px rgba(255, 0, 127, 0.7);
-
+  box-shadow:
+    0 10px 30px rgba(0, 255, 255, 0.8),
+    0 10px 20px rgba(0, 255, 255, 0.6) inset;
 }
 
 .dare-btn {
-  background: #D400FF;
+  background: linear-gradient(145deg, #d400ff, #89009a);
+  box-shadow:
+    0 5px 15px rgba(212, 0, 255, 0.5),
+    0 5px 10px rgba(212, 0, 255, 0.3) inset;
+  transition: all 0.3s ease;
   color: #ffffff;
 }
 
 .dare-btn:hover {
-  background: #FF007F;
+  background: linear-gradient(145deg, #ff00ff, #c700c7);
   color: #1A1A1A;
-  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.7), 0 4px 25px rgba(255, 0, 127, 0.7);
+  box-shadow:
+    0 10px 30px rgba(212, 0, 255, 0.8),
+    0 10px 20px rgba(212, 0, 255, 0.6) inset;
 }

@@ -20,7 +20,9 @@ html {
   padding: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(180deg, #1A1A1A, #000000);
+  background: linear-gradient(90deg, #1A1A1A, #000000);
+  background: linear-gradient(45deg, #1A1A1A, #000000);
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(0, 0, 0, 0.8));
   color: #ffffff;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
@@ -56,30 +58,38 @@ button {
   font-weight: 300;
 }
 
-@keyframes neon-line {
+/* Definisanje animacije talasa */
+@keyframes wave {
   0% {
-    left: -100%;
+    transform: scaleX(1);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
   }
 
   50% {
-    left: 100%;
+    transform: scaleX(1.5);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
   }
 
   100% {
-    left: -100%;
+    transform: scaleX(1);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
   }
 }
 
 /* Neonska linija */
 .neon-line {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 63.5px);
   left: 0;
   width: 300%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.8), rgba(0, 255, 255, 0.1));
+  background: linear-gradient(180deg, transparent, #00FFFF, transparent);
   filter: blur(2px);
-  animation: neon-line 6s linear infinite;
+  z-index: 2;
+  animation: wave 4s ease-in-out infinite;
 }
 
 /* Svetlosni efekat */
@@ -101,11 +111,32 @@ button {
 .deck-container {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 15px;
   color: #ffffff;
   animation: glow 2s ease-in-out infinite alternate;
+}
+
+.deck-container::before,
+.deck-container::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(180deg, transparent, #00FFFF, transparent);
+  z-index: 1;
+  opacity: 0.2;
+  animation: move-lines 10s linear infinite;
+}
+
+.deck-container::after {
+  right: 25%;
+  animation-delay: 5s;
+}
+
+.deck-container::before {
+  left: 25%;
+  animation-delay: 5s;
 }
 
 /* Prilagodite stilove za tekst i dugmad */
@@ -116,7 +147,6 @@ button {
 
 .selection-btn,
 .back-button {
-  background: rgba(0, 255, 255, 0.8);
   border: none;
   border-radius: 25px;
   color: #000;
@@ -124,8 +154,13 @@ button {
   margin: 15px;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
   cursor: pointer;
+  background: linear-gradient(145deg, #00e0e0, #007777);
+  box-shadow:
+    0 5px 15px rgba(0, 255, 255, 0.5),
+    0 5px 10px rgba(0, 255, 255, 0.3) inset;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
 .selection-btn:hover,
@@ -133,4 +168,51 @@ button {
   background: #00ffff;
   color: #fff;
   box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+.horizontal-line {
+  position: absolute;
+  height: 2px;
+  width: 100vw;
+  background: linear-gradient(90deg, transparent, #D400FF, transparent);
+  z-index: 1;
+  animation: move-horizontal 8s linear infinite;
+}
+
+.horizontal-line.one {
+  top: calc(30% + 63.5px);
+  animation-delay: 0s;
+}
+
+.horizontal-line.two {
+  top: calc(70% + 63.5px);
+  animation-delay: 4s;
+}
+
+@keyframes move-horizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move-lines {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
 }

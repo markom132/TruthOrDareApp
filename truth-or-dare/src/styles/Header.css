@@ -29,5 +29,5 @@
     margin: 10px 0 0 0;
     font-style: italic;
     color: #D400FF;
-    text-shadow: 0 0 10px rgba(212, 0, 255, 0.7);
+    text-shadow: 0 0 10px rgba(212, 0, 255, 0.7), 0 0 20px rgba(212, 0, 255, 0.5), 0 0 30px rgba(212, 0, 255, 0.3);
 }

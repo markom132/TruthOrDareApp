@@ -12,14 +12,16 @@ function App() {
     <Router>
       <div className="neon-line"></div>
       <Header />
+      <div className="horizontal-line one"></div>
+      <div className="horizontal-line two"></div>
       <Routes>
-      <Route 
-          path="/" 
-          element={<Hero setChoice={setChoice} />} 
+        <Route
+          path="/"
+          element={<Hero setChoice={setChoice} />}
         />
-         <Route 
-          path="/deck" 
-          element={<CardDeck choice={choice} />} 
+        <Route
+          path="/deck"
+          element={<CardDeck choice={choice} />}
         />
       </Routes>
     </Router>

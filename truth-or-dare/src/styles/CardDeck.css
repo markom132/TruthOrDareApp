@@ -29,6 +29,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     margin-bottom: 30px;
+    z-index: 2;
 }
 
 .deck:hover {

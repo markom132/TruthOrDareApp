@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import '../styles/Card.css';
 
 const Card = ({ content, flipped, onFlipEnd }) => {

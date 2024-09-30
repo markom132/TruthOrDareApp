@@ -19,7 +19,6 @@ const challenges = [
 const CardDeck = ({ choice }) => {
     const [drawnCard, setDrawnCard] = useState(null);
     const [flipped, setFlipped] = useState(false);
-    const [isFlipping, setIsFlipping] = useState(false);
     const navigate = useNavigate();
 
     const changeSound = useRef(null);
@@ -44,7 +43,6 @@ const CardDeck = ({ choice }) => {
             const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
             setDrawnCard(randomCard);
         }
-        setIsFlipping(false);
     }
 
     const handleBack = () => {

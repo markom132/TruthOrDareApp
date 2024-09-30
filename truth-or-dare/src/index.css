@@ -125,7 +125,7 @@ button {
   background: linear-gradient(180deg, transparent, #00FFFF, transparent);
   z-index: 1;
   opacity: 0.2;
-  animation: move-lines 10s linear infinite;
+  animation: move-linesCD 10s linear infinite;
 }
 
 .deck-container::after {
@@ -201,7 +201,7 @@ button {
   }
 }
 
-@keyframes move-lines {
+@keyframes move-linesCD {
   0% {
     transform: translateY(-100%);
   }

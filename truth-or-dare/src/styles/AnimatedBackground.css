@@ -5,7 +5,7 @@
     background: linear-gradient(180deg, transparent, #00FFFF, transparent);
     opacity: 0.2;
     z-index: -1;
-    animation: move-lines 10s linear infinite;
+    animation: move-linesAB 10s linear infinite;
 }
 
 .line.left-one {
@@ -112,7 +112,7 @@
     }
 }
 
-@keyframes move-lines {
+@keyframes move-linesAB {
     0% {
         transform: translateY(0);
     }

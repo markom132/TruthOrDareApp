@@ -32,16 +32,8 @@ public class DataLoader {
             List<Map<String, Object>> data = objectMapper.readValue(jsonData, new TypeReference<>() {
             });
 
-            jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS challenges (id INT PRIMARY KEY, question VARCHAR(255), challenge VARCHAR(255), type VARCHAR(50))");
-
             for (Map<String, Object> entry : data) {
-                Integer id = (Integer) entry.get("id");
-                String question = (String) entry.get("question");
-                String challenge = (String) entry.get("challenge");
-                String type = (String) entry.get("type");
 
-                jdbcTemplate.update("INSERT INTO challenges (id, question, challenge, type) VALUES (?, ?, ?, ?)",
-                        id, question, challenge, type);
             }
 
             System.out.println("Data successfully loaded into the H2 database.");

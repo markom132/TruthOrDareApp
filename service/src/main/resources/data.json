@@ -5,6 +5,16 @@
     "type": "truth"
   },
   {
+    "id": 3,
+    "question": "Koja je 1111111111tvoja najveća tajna?",
+    "type": "truth"
+  },
+  {
+    "id": 13,
+    "question": "Koja je tvoja najv33333eća tajna?",
+    "type": "truth"
+  },
+  {
     "id": 2,
     "challenge": "Pojedi kašiku senfa!",
     "type": "dare"

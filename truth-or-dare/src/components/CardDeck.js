@@ -1,20 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/CardDeck.css';
 import sound from '../styles/card-sounds.mp3';
 import Card from './Card';
+import { getAllTruths, getAllDares } from '../api';
 
-const questions = [
-    'Koja ti je najveća tajna?',
-    'Šta bi promenio/la kod sebe?',
-    'Koga od prisutnih smatraš najzanimljivijim?'
-];
-
-const challenges = [
-    'Pojedi kašiku senfa!',
-    'Pleši bez muzike 1 minut.',
-    'Igraj "plank" 30 sekundi.'
-];
 
 const CardDeck = ({ choice }) => {
     const [drawnCard, setDrawnCard] = useState(null);
@@ -22,6 +12,27 @@ const CardDeck = ({ choice }) => {
     const navigate = useNavigate();
 
     const changeSound = useRef(null);
+
+    const [questions, setQuestions] = useState([]);
+    const [challenges, setChallenges] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const truthData = await getAllTruths();
+                const truthQuestions = truthData.map(truth => truth.question);
+                setQuestions(truthQuestions);
+
+                const dareData = await getAllDares();
+                const dareChallenges = dareData.map(dare => dare.challenge);
+                setChallenges(dareChallenges);
+            } catch (error) {
+                console.error('Failed to load data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const drawCard = () => {
 
@@ -38,7 +49,7 @@ const CardDeck = ({ choice }) => {
     };
 
     const handleFlipEnd = () => {
-        if(!flipped) {
+        if (!flipped) {
             const cardArray = choice === 'truth' ? questions : challenges;
             const randomCard = cardArray[Math.floor(Math.random() * cardArray.length)];
             setDrawnCard(randomCard);

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "question": "Koja je tvoja najveća tajna?",
+    "type": "truth"
+  },
+  {
+    "id": 2,
+    "challenge": "Pojedi kašiku senfa!",
+    "type": "dare"
+  }
+]
